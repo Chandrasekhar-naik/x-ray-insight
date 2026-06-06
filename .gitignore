@@ -8,6 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+node_modules/
 dist
 dist-ssr
 .output
@@ -34,3 +35,9 @@ dist-ssr
 # Backend uploads
 /uploads
 backend/uploads
+backend/node_modules/
+backend/.env
+.env
+build/
+uploads/
+.vscode/
