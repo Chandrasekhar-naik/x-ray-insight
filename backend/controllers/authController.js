@@ -16,11 +16,10 @@ export async function signup(req, res) {
       return res.status(400).json({ error: "Email already in use" });
     }
 
-    const passwordHash = await hashPassword(password);
     const user = await User.create({
       name,
       email,
-      password: passwordHash,
+      password,
     });
 
     const token = signToken({ id: user._id, email: user.email });

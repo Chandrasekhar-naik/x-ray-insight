@@ -1,20 +1,22 @@
-import { Routes, Route, Navigate, Outlet } from 'react-router-dom';
-import { useAuth } from './lib/auth-context';
-import Navbar from './components/Navbar';
-import LoginPage from './routes/login';
-import SignupPage from './routes/signup';
-import AboutPage from './routes/about';
-import HomePage from './routes/_authenticated/home';
-import HistoryPage from './routes/_authenticated/history';
-import DiagnosisPage from './routes/_authenticated/diagnosis.$id';
-import ProfilePage from './routes/_authenticated/profile';
-import IndexPage from './routes/index';
+import { Routes, Route, Navigate, Outlet } from "react-router-dom";
+import { useAuth } from "./context/auth-context";
+import Navbar from "./components/Navbar";
+import LoginPage from "./pages/login";
+import SignupPage from "./pages/signup";
+import AboutPage from "./pages/about";
+import HomePage from "./pages/_authenticated/home";
+import HistoryPage from "./pages/_authenticated/history";
+import DiagnosisPage from "./pages/_authenticated/diagnosis.$id";
+import ProfilePage from "./pages/_authenticated/profile";
+import IndexPage from "./pages/index";
 
 function RequireAuth({ children }) {
   const { user, loading } = useAuth();
 
   if (loading) {
-    return <div className="min-h-screen grid place-items-center text-muted-foreground">Loading…</div>;
+    return (
+      <div className="min-h-screen grid place-items-center text-muted-foreground">Loading…</div>
+    );
   }
 
   if (!user) {

@@ -3,7 +3,7 @@ import { useDropzone } from 'react-dropzone';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { api } from '@/api';
-import { useAuth } from '@/lib/auth-context';
+import { useAuth } from '@/context/auth-context';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 import { UploadCloud, X, ImageIcon, Loader2, Sparkles } from 'lucide-react';
